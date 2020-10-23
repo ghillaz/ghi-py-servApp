@@ -1,7 +1,11 @@
 # Create a file that will serve as the entry point for our application.
 # This will tell the uWSGI server how to interact with it
 
-from app.main import create_app, db
+# esta merda faz com que tenha acesso a app atraves do meu ip externo
+# e pode-se configurar o porto e outras cenas
+# gunicorn --bind 0.0.0.0:8080 run_wsgi:app
+
+from app import create_app, db
 
 app = create_app('development')
 
